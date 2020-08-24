@@ -44,15 +44,6 @@ int main(){
         cout<<costs[res]<<endl;
 
 
-
-
-
-
-
-
-
-
-
     }
     
 
