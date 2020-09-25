@@ -3,32 +3,19 @@
 
 using namespace std;
 
-string s;
-
-int dp[26] = {-1,};
-
-
-
 int main() {
 
-    cin>>s;
 
-    for(int i = 0; i< 26;i++){
-        dp[i] = -1;
-    }
+    double d;
 
-    for(int i = 0; i < s.length(); i++){
-        if(dp[s[i]-97] == -1){
-            dp[s[i]-97] = i;
-        }
+    double a,b;
+
+    cin>>a>>b;
+    d = double(a/b);
 
 
-    }
+    printf("%.11f\n", d);
 
-    for(int i = 0; i< 26;i++){
-        cout<<dp[i]<<" ";
-    }
-    cout<<endl;
 
 
 
