@@ -87,7 +87,7 @@ int main(){
     for(auto& p : parties){
         bool flag = false;
         for(auto& a : p){
-            if(!flag) break;
+            if(flag) break;
             for(auto& k : knows){
                 if(Find(a) == Find(k)){
                     flag = true;

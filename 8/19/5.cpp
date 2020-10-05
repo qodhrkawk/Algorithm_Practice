@@ -7,6 +7,7 @@
 using namespace std;
 
 int dp[100001] = {0, };
+int coins[101] = {0, };
 
 
 
@@ -22,17 +23,19 @@ int main(){
     int n,k;
 
     cin>>n>>k;
+    dp[0] = 1;
 
-    for(int i = 0; i < n; i++){
-        int tmp;
-        cin>>tmp;
-        dp[tmp] = 1;
+    for(int i = 1; i <= n; i++){
+        cin>>coins[i];
     }
 
+    for(int i = 1; i <= n; i++){
+        for(int j = 1; j <= k; j++){
+            if(j>=coins[i]){
+                dp[j] += dp[j-coins[i]];
+            }
 
-
-    for(int i = 2; i <= k; i++){
-        dp[i] += dp[i-1] + dp[i-2];
+        }
 
     }
 

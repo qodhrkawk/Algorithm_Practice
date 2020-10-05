@@ -5,41 +5,57 @@
 #include <queue>
 using namespace std;
 
-int n;
+int n,m;
+
+int map[501][501];
+int answer = 0;
+
+int ydir[4] = {0,0,1,-1};
+int xdir[4] = {1,-1,0,0};
+
+
+void dfs(int y,int x){
+    
+    if(y == n && x == m){
+        answer++;
+        return;
+    }
+
+    int ny,nx;
+    for(int i = 0 ;i < 4; i++){
+        ny = y + ydir[i];
+        nx = x + xdir[i];
+
+        if(ny > 0 && nx > 0 && ny <= n && nx <=m){
+            if(map[ny][nx] < map[y][x]){
+                dfs(ny,nx);
+            }
+        }
+
+    }
+
+
+    return;
+
+
+}
+
+
 
 
 
 int main() {
-
-    ios_base::sync_with_stdio(false);
-    cout.tie(0);
-    cin.tie(0);
 	
 
-    cin>>n;
+    cin>>n>>m;
 
-
-    vector<int> arr(n,0);
-
-    for(int i = 0; i < n ;i++){
-        cin>>arr[i];
+    for(int i = 1; i <= n; i++){
+        for(int j = 1; j<= m; j++){
+            cin>>map[i][j];
+        }
     }
 
-    sort(arr.begin(),arr.end());
-
-    int tmp = 1001;
-    for(int i = 0; i < arr.size(); i++){
-        if(arr[i] == tmp){
-            continue;
-        }
-        else{
-            cout<<arr[i]<<" ";
-            tmp = arr[i];
-        }
-
-    }
-
-    cout<<endl;
+    cout<<answer<<endl;
 
 
 

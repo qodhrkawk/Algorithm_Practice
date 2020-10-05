@@ -9,7 +9,7 @@ vector<int> solution(int brown, int yellow) {
     
     vector<vector<int> > pairs; 
 
-    for(int i = 1; i <= ceil(yellow/2); i++){
+    for(int i = 1; i <= yellow; i++){
         vector<int> tmp;
         if(yellow%i == 0 && yellow/i>=i){
             // 가로, 세로 순서

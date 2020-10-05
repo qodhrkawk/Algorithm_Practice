@@ -29,6 +29,7 @@ string solution(string s) {
         else{
             if(s[i]>=65 && s[i] <=90){
                 s[i] = lower[(s[i]-65)%26];
+            }
             tmp = 0;
         }
 

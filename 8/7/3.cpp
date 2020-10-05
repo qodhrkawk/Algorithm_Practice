@@ -11,7 +11,7 @@ string relation = "";
 vector<int> nums(0,0);
 
 
-bool check(string line,int n){
+bool check(char line[],int n){
     int firstIdx = 0;
     int secondIdx = 0;
     for(int i = 0; i <n;i++){
@@ -50,7 +50,7 @@ bool check(string line,int n){
 }
 
 
-void permutation(string origin, int start, int end,int n){
+void permutation(char origin[], int start, int end,int n){
    
     if(start == end){
         if(check(origin,n) == true){
@@ -85,7 +85,7 @@ int solution(int n, vector<string> data) {
         relation += d[3];
         nums.push_back(d[4]-48);
     }
-    string origin = "ACFJMNRT";
+    char origin[8] = {'A','C','F','J','M','N','R','T'};
 
     permutation(origin,0,7,n);
 

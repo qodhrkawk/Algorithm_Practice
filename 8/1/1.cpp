@@ -5,26 +5,28 @@
 using namespace std;
 
 int solution(vector<int> people, int limit) {
-    int answer = 1;
+    int answer = 0;
 
     sort(people.begin(),people.end());
 
-    int onBoat = 0;
-    while(people.size() > 0){
-        if(onBoat + people[0] < limit){
-            onBoat += people[0];
-            people.erase(people.begin(),people.begin());
+    int right = people.size()-1;
+    int left = 0;
+    while(left<=right){
+        answer+= 1;
+        if(people[right]+people[left] <= limit){
+            left++;
+            right--;
         }
+        // else if(left == right){
+        //     left++;
+        // }
         else{
-            answer+= 1;
-            onBoat = people[0];
-            people.erase(people.begin(),people.begin()); 
+            right--;
         }
+
 
 
     }
-
-
 
     return answer;
 }

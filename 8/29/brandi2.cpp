@@ -34,6 +34,16 @@ void bfsRef(vector<vector<int> >& house){
 
         }
     }
+
+    for(int i = 1; i<=n;i++){
+        for(int j = 1; j<=n; j++){
+            if(house[i][j] == 0){
+                house[i][j] = 3000;
+            }
+
+        }
+
+    }
     
     
 
@@ -63,7 +73,15 @@ void bfsFromEndRef(vector<vector<int> >& house){
         }
     }
     
+    for(int i = 1; i<=n;i++){
+        for(int j = 1; j<=n; j++){
+            if(house[i][j] == 0){
+                house[i][j] = 2999;
+            }
 
+        }
+
+    }
     
 
 
@@ -149,10 +167,11 @@ int main() {
 
 
 
+
     int res = 0;
-    for(int i = n; i>=2; i--){
-        for(int j = n; j>=2; j--){
-            if(distanceFromEnd[i][j]<distance[i][j] && house[i][j] != -1 && !(i==n&& j ==n)){
+    for(int i = n; i>=1; i--){
+        for(int j = n; j>=1; j--){
+            if(distanceFromEnd[i][j]<distance[i][j] && house[i][j] != -1 && !(i==n&& j ==n) && !(i==1 && j==1)){
                 house[i][j] = -1;
                 int temp = bfs(house);
                 res = max(res,temp);

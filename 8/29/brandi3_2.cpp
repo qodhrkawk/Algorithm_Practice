@@ -66,11 +66,11 @@ int main() {
         cout<<"bug"<<endl;
     }
     else{
-        if(d[n] == INF){
+        if(d[n-1] == INF){
             cout<<"bug"<<endl;
         }
         else{
-            cout<<d[n]<<endl;
+            cout<<d[n-1]<<endl;
         }
 
     }

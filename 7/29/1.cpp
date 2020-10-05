@@ -29,7 +29,7 @@ int solution(vector<int> citations) {
     }
 
     for(int i = 0; i < 10001; i++){
-        if(dp[i]>i){
+        if(dp[i]>=i){
             answer = i;
         }
 

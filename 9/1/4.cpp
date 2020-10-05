@@ -5,8 +5,8 @@
 using namespace std;
 
 int n;
-int dp[201];
-int arr[201];
+int dp[1001];
+int arr[1001];
 int res = 0;
 
 int main() {

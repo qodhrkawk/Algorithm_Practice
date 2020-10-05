@@ -39,7 +39,13 @@ int checkOns(){
 void dfs(vector<int> tmp,int length){
 
     if(length == k){
-        var.push_back(tmp);
+        for(int i = 0; i < k; i++){
+            changeLine(tmp[i]);
+        }
+        res = max(res,checkOns());
+        for(int i = 0; i < k; i++){
+            changeLine(tmp[i]);
+        }
         return;
     }
     else{
@@ -73,24 +79,10 @@ int main() {
     }
     cin>>k;
 
-    int res = 0;
     
     vector<int> tmp;
 
     dfs(tmp,0);
-
-
-    for(auto v : var){
-        for(int i = 0; i < k; i++){
-            changeLine(v[i]);
-        }
-        res = max(res,checkOns());
-        for(int i = 0; i < k; i++){
-            changeLine(v[i]);
-        }
-
-    }
-
 
     cout<<res<<endl;
 

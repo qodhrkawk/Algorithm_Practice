@@ -9,12 +9,12 @@ using namespace std;
 int solution(vector<int> citations) {
     int answer = 0;
 
-    sort(citations.begin(),citations.end());
+    
+    for(int i = 0; i < citations.size(); i ++){
+        
+            
 
-    int mid = ceil(double(citations.size()/2));
-
-    answer = citations[mid-1];
-
+    }
 
 
 

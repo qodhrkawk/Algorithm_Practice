@@ -20,6 +20,9 @@ int main(){
         cin>>arr[i];
     }
 
+    sort(arr.begin(),arr.end());
+    
+
     cout<<arr[0]*arr[n-1]<<endl;
 
 

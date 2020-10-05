@@ -11,7 +11,7 @@ bool solution(string s)
     int y = 0;
 
     for(int i = 0; i <s.length() ; i ++){
-        if(s[i] == 89 || s[i] == 127){
+        if(s[i] == 89 || s[i] == 121){
             y++;
         }
         else if(s[i] == 80 || s[i] == 112){
@@ -21,6 +21,8 @@ bool solution(string s)
     }
 
     answer = p==y;
+
+    cout<<p<<y;
 
 
 

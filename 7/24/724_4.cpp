@@ -14,7 +14,7 @@ string convert(int num,int size){
             ans+="#";
         }
         else{
-            ans+="1";
+            ans+=" ";
         }
 
     }

@@ -20,7 +20,7 @@ int solution(int n) {
 
     for(int i = 2; i<= n; i++){
         if(prime[i] == true){
-            cout<<i<<endl;
+
             answer += 1;
         }
 

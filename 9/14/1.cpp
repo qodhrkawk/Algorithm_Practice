@@ -17,15 +17,15 @@ int main() {
         cin>>dp[i];
     }
 
-    int minimum = 10000;
+    int maximum = 0;
     for(int i = 1;i <= 9; i++){
-        if(dp[i] < minimum){
+        if(dp[i] > maximum){
             answer = i;
-            minimum = dp[i];
+            maximum = dp[i];
         }
     }
 
-    cout<<minimum<<endl;
+    cout<<maximum<<endl;
     cout<<answer<<endl;
 	return 0;
 }

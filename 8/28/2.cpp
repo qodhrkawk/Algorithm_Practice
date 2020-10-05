@@ -1,9 +1,7 @@
 #include <iostream>
 #include <vector>
-#include <math.h>
 #include <string>
-#include <algorithm>
-#include <queue>
+
 using namespace std;
 
 int n, m;

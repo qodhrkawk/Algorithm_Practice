@@ -11,8 +11,6 @@ vector<int> dp;
 vector<bool> mal(10,false);
 
 void dyn(int start, string now){
-
-
     if(start == s.length()){
         dp.push_back(stoi(now));
     }
@@ -80,7 +78,7 @@ int main(){
     dyn(0,"");
 
     for(int i = 0; i <dp.size();i++){
-        dp[i] = abs(n-dp[i]) + s.length();
+        dp[i] = abs(n-dp[i]) + to_string(dp[i]).length();
     }
 
     int minimum = abs(n-100);

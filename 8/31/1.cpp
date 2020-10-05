@@ -21,6 +21,7 @@ int main() {
         for(int j = 0;j <=n; j++){
             for(int l = 0; l<=j; l++){
                 dp[i][j] += dp[i-1][j-l];
+                dp[i][j] = dp[i][j]%d;
 
             }
 
@@ -33,7 +34,7 @@ int main() {
 
 
 
-    cout<<dp[k][n]<<endl;
+    cout<<dp[k][n]%d<<endl;
     
 
 

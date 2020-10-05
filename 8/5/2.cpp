@@ -30,17 +30,19 @@ vector<string> solution(vector<string> record) {
 
         if(line[0] == "Enter"){
            
-           
-            int newIdx = nameIndex.size();  
+            bool wasin = false;
+            int newIdx = names.size();  
             for(int i = 0 ; i < userIds.size(); i++){
                 if(line[1] == userIds[i]){
                     newIdx = i;
                     names[i] = line[2];
+                    wasin = true;
                     break;
                 }
             }
 
-            if(newIdx == nameIndex.size()){
+            // 처음 들어온 id일 때
+            if(wasin == false){
                 userIds.push_back(line[1]);
                 names.push_back(line[2]);
             }
@@ -51,13 +53,12 @@ vector<string> solution(vector<string> record) {
 
         }
         else if(line[0] == "Leave"){
-            int newIdx = nameIndex.size();
+            int newIdx = names.size();
             for(int i = 0; i < userIds.size(); i++){
                 if(userIds[i] == line[1]){
                     newIdx = i;
                     break;
                 }
-                
             }
             userIdIndex.push_back(newIdx);
             nameIndex.push_back(newIdx);

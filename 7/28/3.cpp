@@ -12,13 +12,28 @@ int solution(vector<int> d, int budget) {
     sort(d.begin(),d.end());
 
     
-    while(budget>0){
-        budget -= d[answer];    
-        answer++;
+    // while(budget>0){
+    //     budget -= d[answer];    
+    //     answer++;
+
+    // }
+    // if(budget<0)
+    //     answer--;
+
+
+    for (int n : d){
+
+        if(budget>=d[answer]){
+ 
+            budget -= d[answer];
+            answer++;
+        }
+        else{
+            break;
+        }
+
 
     }
-    if(budget<0)
-        answer--;
 
 
     return answer;

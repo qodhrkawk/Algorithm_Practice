@@ -17,10 +17,9 @@ int dfs(int start, int price,int n){
     visited[start] = true;
     int res = 1;
     int maximum = 0;
-    
+
     bool never = true;
     for(int j = 1 ; j<= n; j++){
-        
         if(j==start)
             continue;
         if(dp[start][j] >= price && visited[j] != true){
@@ -33,7 +32,6 @@ int dfs(int start, int price,int n){
                 }
             }
         }
-    
     }
 
     if(index == -1){
