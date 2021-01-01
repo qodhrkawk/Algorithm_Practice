@@ -4,9 +4,10 @@
 using namespace std;
 
 int n,t;
+const int MAX = 1025;
 
 
-int map[1025][1025];
+int map[MAX][MAX];
 
 
 int main() {
@@ -36,7 +37,7 @@ int main() {
 
         cin>>y1>>x1>>y2>>x2;
 
-        cout<<map[y2][x2] - map[y1-1][x2] - map[y2][x1-1] + map[y1-1][x1-1]<<endl;
+        cout<<map[y2][x2] - map[y1-1][x2] - map[y2][x1-1] + map[y1-1][x1-1]<<"\n";
 
     }
 

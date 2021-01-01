@@ -57,7 +57,7 @@ int main() {
         
 
     }
-
+    
     
     sort(g.begin(),g.end());
 
