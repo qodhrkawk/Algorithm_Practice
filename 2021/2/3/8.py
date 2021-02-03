@@ -1,0 +1,11 @@
+#프로그래머스 수박수
+
+def solution(n):
+    answer = ''
+
+    arr = ['수','박']
+
+    for i in range(n):
+        answer += arr[i%2]
+
+    return answer
