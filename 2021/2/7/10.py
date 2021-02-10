@@ -1,25 +1,29 @@
 #프로그래머스 소수 찾기
 
+from itertools import permutations
+
+
+
 def solution(numbers):
     answer = 0
     maximum = 10000000
-    maximum = 10
 
-    dp = [True for _ in range(maximum)]
+    perm = []
 
-    dp[0] = False
-    dp[1] = False
+    for i in range(1,len(numbers)+1):
+        for j in permutations(list(numbers),i) :
+            num = int(''.join(j))
+            flag = True
+            for k in range(2,num) :
+                if num%k == 0 :
+                    flag = False
+                    break
+            if flag :
+                if num not in perm and num != 0 and num != 1 :
+                    perm.append(num)
+    return len(perm)
 
-    for i in range(2,maximum) :
-        for j in range(2,i*j<maximum,1) :
-            dp[i*j] = False
-
-    for i in range(2, maximum):
-        if set(str(i)) - set(numbers) <= 0 :
-            answer += 1
 
 
-    print(dp)
-    return answer
 
-print(solution("123"))
+print(solution("17"))
