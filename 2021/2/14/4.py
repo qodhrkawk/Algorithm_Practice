@@ -1,27 +1,36 @@
+#프로그래머스 불량 사용자
+
+from itertools import permutations
+
+
+
+def check(user,ban) :
+    for i in range(len(user)) :
+        if len(user[i]) != len(ban[i]) :
+            return False
+        for j in range(len(user[i])) :
+            print(i,j)
+            if ban[i][j] == '*':
+                continue
+            if user[i][j] != ban[i][j] :
+                return False
+    return True
+
+
+
+
 def solution(user_id, banned_id):
-    answer = 0
-
-    names = []
 
 
-    for bi in banned_id :
-        tmp = []
-
-        for ui in user_id :
-            if len(bi) == len(ui) :
-                flag = True
-                for i in range(len(bi)) :
-                    if bi[i] != ui[i] and bi[i] != '*' :
-                        flag = False
-                        break
-                if flag :
-                    tmp.append(ui)
-
-        names.append(tmp)
-
-    print(names)
+    ans = []
+    for perm in permutations(user_id,len(banned_id)) :
+        if check(perm,banned_id) :
+            perm = set(perm)
+            if perm not in ans :
+                ans.append(perm)
 
 
 
 
-    return answer
+
+    return len(ans)
