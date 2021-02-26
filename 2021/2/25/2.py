@@ -1,44 +1,26 @@
 #프로그래머스 도둑질
-import sys
-sys.setrecursionlimit(10**7)
 
 
-def dyamic(dp,n,lastAble,index) :
-
-    if index >= n :
-        return 0
-    elif index == n-1 and lastAble == False :
-        return 0
-    elif  index == n-1 and lastAble == False :
-        return dp[index]
-
-    dp[index] =
-
-
-
-
-def dfs(money,n,lastAble,index,sum) :
-    if index == n :
-        if lastAble :
-            sum += money[n]
-        return sum
-    elif index > n :
-        return sum
-
-    else :
-        sum += money[index]
-        return max(dfs(money,n,lastAble,index+2,sum),dfs(money,n,lastAble,index+3,sum))
 
 def solution(money):
 
-    lastAble = money[:]
-    lastDisAble = money[:]
+    lastAble = [0] * len(money)
+    lastDisAble = [0] * len(money)
 
-    answer = max(dfs(money,len(money)-1,False,0,0),dfs(money,len(money)-1,True,1,0),dfs(money,len(money)-1,True,2,0))
+    lastDisAble[0] = money[0]
+    lastDisAble[1] = money[0]
+
+    for i in range(2,len(money)-1) :
+        lastDisAble[i] = max(lastDisAble[i-1],lastDisAble[i-2]+money[i])
+
+    lastAble[1] = money[1]
+
+    for i in range(2, len(money)):
+        lastAble[i] = max(lastAble[i - 1], lastAble[i - 2] + money[i])
 
 
 
-    return answer
+    return max(lastDisAble[len(money)-2],lastAble[len(money)-1])
 
 
 print(solution([1, 2, 3, 1]))
