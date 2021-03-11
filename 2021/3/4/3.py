@@ -2,7 +2,7 @@
 
 
 def solution(N, number):
-    answer = 0
+
 
     if N == number :
         return 1
@@ -30,11 +30,6 @@ def solution(N, number):
 
         if number in tmp :
             return i
-
-
-
-
-
 
     return -1
 
