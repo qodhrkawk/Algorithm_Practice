@@ -16,13 +16,15 @@ def dfs(y,x) :
 
         if 0 <= newY < n and 0 <= newX < m and not visited[newY][newX]:
             # print(y,x,newY,newX)
-            visited[newY][newX] = True
+
             if dp[newY][newX] == -INF :
+                visited[newY][newX] = True
                 dp[y][x] = max(dp[y][x],dfs(newY,newX))
+                visited[newY][newX] = False
 
             else :
                 dp[y][x] = max(dp[y][x],dp[newY][newX])
-            visited[newY][newX] = False
+
 
 
     dp[y][x] += arr[y][x]
@@ -48,3 +50,6 @@ dfs(0,0)
 # print(dp)
 
 print(dp[0][0])
+
+
+
