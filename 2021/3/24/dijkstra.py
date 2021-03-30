@@ -17,6 +17,7 @@ def solution():
         u,v,w = map(int,input().split())
         graph[u].append([v,w])
 
+
     dist = [float('inf') for _ in range(n+1)]
     dist[start] = 0
 
@@ -25,9 +26,6 @@ def solution():
 
     while heap:
         u = heapq.heappop(heap)
-
-        if dist[u[1]] < u[0] :
-            continue
 
         for v in graph[u[1]]:
             newW = dist[u[1]] + v[1]
