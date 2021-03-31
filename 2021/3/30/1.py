@@ -19,7 +19,7 @@ def dfs(board,n,visited,y,x,lastDir,res,dp) :
     if y == n-1 and x == n-1 :
         return
 
-    d = [[0,1],[0,-1],[1,0],[0,1]]
+    d = [[0,1],[0,-1],[1,0],[-1,0]]
 
     for i in range(4) :
         newY = y + d[i][0]
