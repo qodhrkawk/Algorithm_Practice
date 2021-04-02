@@ -53,7 +53,6 @@ def solution(board):
     visited = [[False for _ in range(n)] for _ in range(n)]
 
     dfs(board,n,visited,0,0,0,0,dp)
-    print(dp)
 
     return dp[n-1][n-1]*100
 

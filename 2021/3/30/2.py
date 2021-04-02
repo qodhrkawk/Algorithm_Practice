@@ -20,8 +20,8 @@ def check(tmp,limit,n) :
         idx += 1
 
 
-    return True
 
+    return True
 
 
 def solution(distance, rocks, n):
@@ -48,7 +48,5 @@ def solution(distance, rocks, n):
 
 
     return answer
-
-
 
 print(solution(25,[2,14,11,21,17],2))
