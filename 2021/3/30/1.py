@@ -47,7 +47,6 @@ def solution(board):
 
     n = len(board)
 
-    # answer = 6*n*n
     INF = float('inf')
     dp = [[INF for _ in range(n)] for _ in range(n)]
     visited = [[False for _ in range(n)] for _ in range(n)]

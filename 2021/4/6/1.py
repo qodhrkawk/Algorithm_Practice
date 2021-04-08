@@ -1,6 +1,5 @@
 #프로그래머스 추석 트래픽
 
-import math
 
 def solution(lines):
 
@@ -25,9 +24,6 @@ def solution(lines):
         startTime = round(startTime,3)
         executeTimes.append([startTime,endTime])
 
-    executeTimes = sorted(executeTimes)
-
-    # print(executeTimes)
 
     for idx,time in enumerate(executeTimes) :
         count = 1
