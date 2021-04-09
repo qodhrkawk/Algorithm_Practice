@@ -22,6 +22,7 @@ def solution():
     dist[start] = 0
 
     heap = []
+
     heapq.heappush(heap,[0,start])
 
     while heap:

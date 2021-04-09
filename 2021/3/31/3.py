@@ -53,6 +53,7 @@ def solution(board):
     bfs(board,n,dp,direction)
     print(dp)
 
+
     return dp[n-1][n-1]*100
 
 
