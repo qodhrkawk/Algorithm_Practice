@@ -9,7 +9,7 @@ def solution(land):
     for i in range(n-1,-1,-1):
         for j in range(4):
             if i == n-1:
-                dp[i][j] = land[i][j]ㅇ
+                dp[i][j] = land[i][j]
             else :
                 for k in range(4) :
                     if k == j :
