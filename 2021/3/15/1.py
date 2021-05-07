@@ -1,4 +1,4 @@
-#백준 적록색약
+    #백준 적록색약
 
 from _collections import deque
 import copy

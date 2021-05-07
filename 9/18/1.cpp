@@ -47,16 +47,18 @@ int selectSeat(Seat** seats){
     for(int i = 0; i< 5; i++){
         for(int j = 0; j < 5; j++){
             if(seats[i][j].reserved){
-                cout<<"x";
+                cout<<i*5+j+1<<"번:x";
             }
             else{
-                cout<<"O";
+                cout<<i*5+j+1<<"번:O";
             }
-
-
         }
         cout<<endl;
     }
+    int result = 0;
+    cout<<"좌석을 골라주세요"<<endl;
+    cin>>result;
+    return result;
 
 }
 
@@ -96,9 +98,9 @@ int main(){
     Client *clients = new Client[100];
     int clientNum = 0;
     
-    Seat** seat = new Seat*[5];
+    Seat** seats = new Seat*[5];
     for(int i = 0 ; i < 5; i++){
-        seat[i] = new Seat[5];
+        seats[i] = new Seat[5];
     }
 
 
@@ -123,8 +125,13 @@ int main(){
         switch(action) {
             case 1 :
                 int movie = selectMovie();
+                int seatNum = selectSeat(seats);
+                seats[seatNum/5][seatNum%5].reserved = true;
+                seats[seatNum/5][seatNum%5].reserver = client;
+                clients[clientIdx].point += 1;
+        
+            case 2 :
                 
-
 
 
         }
